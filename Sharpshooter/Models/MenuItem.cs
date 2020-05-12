@@ -23,7 +23,7 @@ namespace Sharpshooter.Models
 
 
         [Required(ErrorMessage ="A title is required for the menu item")]
-        [Display(Name ="Title")]
+        [Display(Name ="Item Name")]
         public string MenuItemTitle { get; set; }
 
         [Display(Name ="Description")]

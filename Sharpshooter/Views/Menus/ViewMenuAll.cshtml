@@ -1,15 +1,12 @@
 ﻿@model IEnumerable<Sharpshooter.Models.Menu>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Menu";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Menu</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -29,10 +26,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.MenuDescription)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.MenuID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.MenuID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.MenuID }) |
+        <td>           
             @Html.ActionLink("View Menu", "ViewMenu", new { id = item.MenuID })
         </td>
     </tr>

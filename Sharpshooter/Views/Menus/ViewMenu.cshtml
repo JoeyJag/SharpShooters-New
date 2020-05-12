@@ -1,7 +1,7 @@
 ﻿@model Sharpshooter.Models.Menu
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Viewing Menu";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -57,6 +57,5 @@
     </table>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MenuID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Full Menu", "ViewMenuAll")
 </p>

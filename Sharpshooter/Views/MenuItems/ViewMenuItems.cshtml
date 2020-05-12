@@ -1,15 +1,12 @@
 ﻿@model IEnumerable<Sharpshooter.Models.MenuItem>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Menu Items";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Menu Items</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -36,7 +33,7 @@
         <th>
             @Html.DisplayNameFor(model => model.MenuItemCost)
         </th>
-        <th></th>
+        
     </tr>
 
 @foreach (var item in Model) {
@@ -65,11 +62,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.MenuItemCost)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.MenuItemID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.MenuItemID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.MenuItemID })
-        </td>
+        
     </tr>
 }
 

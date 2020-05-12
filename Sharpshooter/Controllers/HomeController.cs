@@ -26,5 +26,12 @@ namespace Sharpshooter.Controllers
 
             return View();
         }
+
+        public ActionResult AdminPanel()
+        {
+            ViewBag.Message = "Admin Panel.";
+
+            return View();
+        }
     }
 }

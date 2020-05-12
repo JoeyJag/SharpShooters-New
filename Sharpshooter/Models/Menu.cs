@@ -13,7 +13,7 @@ namespace Sharpshooter.Models
         [Key]
         public int MenuID { get; set; }
 
-        [Display(Name ="Title")]
+        [Display(Name ="Menu Title")]
         public string MenuTitle { get; set; }
 
         [Display(Name ="Description")]
