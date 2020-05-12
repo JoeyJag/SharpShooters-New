@@ -20,6 +20,10 @@ namespace Sharpshooter.Controllers
             return View(db.Menus.ToList());
         }
 
+        public ActionResult ViewMenuAll()
+        {
+            return View(db.Menus.ToList());
+        }
         // GET: Menus/Details/5
         public ActionResult Details(int? id)
         {
