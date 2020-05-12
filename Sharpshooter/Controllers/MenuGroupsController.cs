@@ -21,6 +21,12 @@ namespace Sharpshooter.Controllers
             return View(menuGroups.ToList());
         }
 
+        public ActionResult ViewMenuGroups()
+        {
+            var menuGroups = db.MenuGroups.Include(m => m.Menu);
+            return View(menuGroups.ToList());
+        }
+
         // GET: MenuGroups/Details/5
         public ActionResult Details(int? id)
         {

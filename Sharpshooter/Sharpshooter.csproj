@@ -294,6 +294,9 @@
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
     <Content Include="Views\Checkout\Complete.cshtml" />
+    <Content Include="Views\Menus\ViewMenuAll.cshtml" />
+    <Content Include="Views\MenuItems\ViewMenuItems.cshtml" />
+    <Content Include="Views\MenuGroups\ViewMenuGroups.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\" />

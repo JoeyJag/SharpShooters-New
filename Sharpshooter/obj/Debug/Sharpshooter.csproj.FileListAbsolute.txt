@@ -329,6 +329,7 @@ C:\Users\Joey Jag\Desktop\Sharpshooter original\Sharpshooter\bin\Microsoft.Owin.
 C:\Users\Joey Jag\Desktop\Sharpshooter original\Sharpshooter\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Joey Jag\Desktop\Sharpshooter original\Sharpshooter\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Joey Jag\Desktop\Sharpshooter original\Sharpshooter\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Joey Jag\Desktop\Sharpshooter original\Sharpshooter\obj\Debug\Sharpshooter.csprojAssemblyReference.cache
 C:\Users\Joey Jag\Desktop\Sharpshooter original\Sharpshooter\obj\Debug\Sharpshooter.Migrations.InitialCreate.resources
 C:\Users\Joey Jag\Desktop\Sharpshooter original\Sharpshooter\obj\Debug\Sharpshooter.Migrations.InitialModel.resources
 C:\Users\Joey Jag\Desktop\Sharpshooter original\Sharpshooter\obj\Debug\Sharpshooter.csproj.GenerateResource.cache
@@ -449,3 +450,4 @@ F:\DUT\3rd year\AppDev 3A\Final Sharpshooters\SharpShooters-New\Sharpshooter\obj
 F:\DUT\3rd year\AppDev 3A\Final Sharpshooters\SharpShooters-New\Sharpshooter\obj\Debug\Sharpshooter.csproj.CopyComplete
 F:\DUT\3rd year\AppDev 3A\Final Sharpshooters\SharpShooters-New\Sharpshooter\obj\Debug\Sharpshooter.dll
 F:\DUT\3rd year\AppDev 3A\Final Sharpshooters\SharpShooters-New\Sharpshooter\obj\Debug\Sharpshooter.pdb
+F:\DUT\3rd year\AppDev 3A\Final Sharpshooters\SharpShooters-New\Sharpshooter\obj\Debug\Sharpshooter.csprojAssemblyReference.cache
