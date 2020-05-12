@@ -1,0 +1,62 @@
+﻿@model Sharpshooter.Models.Menu
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Viewing Menu</h2>
+
+<div>
+    <h4>Menu Item</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MenuTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenuTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MenuDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenuDescription)
+        </dd>
+
+    </dl>
+
+    <table class="table">
+        <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Cost</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.MenuItems)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MenuItemTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MenuItemDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MenuItemCost)
+            </td>
+            <td>
+                <p class="button">@Html.ActionLink("Add To Cart", "AddToCart", "ShoppingCart", new { id = item.MenuItemID }, "")</p>
+            </td>
+        </tr>
+        }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MenuID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
