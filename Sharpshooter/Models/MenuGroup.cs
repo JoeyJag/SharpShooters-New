@@ -19,7 +19,7 @@ namespace Sharpshooter.Models
 
 
         [Required(ErrorMessage ="A title is required for the menu group")]
-        [Display(Name ="Title")]
+        [Display(Name =" Menu Group Name")]
         public string MenuGroupTitle { get; set; }
 
         [Display(Name ="Description")]
