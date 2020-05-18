@@ -1,0 +1,17 @@
+﻿@model Sharpshooter.Models.Menu
+
+@{
+    ViewBag.Title = "Browse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Browsing Category: @Model.MenuTitle</h2>
+
+<ul>
+    @foreach(var item in Model.MenuItems)
+    {
+        <li>
+            @Html.ActionLink(item.MenuItemTitle, "ViewItems",new { id=item.MenuItemID})
+        </li>
+    }
+</ul>

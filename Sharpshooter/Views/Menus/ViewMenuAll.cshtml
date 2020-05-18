@@ -1,35 +1,19 @@
 ﻿@model IEnumerable<Sharpshooter.Models.Menu>
 
 @{
-    ViewBag.Title = "Menu";
+    ViewBag.Title = "ViewMenuAll";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Menu</h2>
+<h2>Browse Category</h2>
+<p>
+    Select from @Model.Count()
+    genres:
+</p>
+<ul>
+    @foreach (var category in Model)
+    {
+        <li>@Html.ActionLink(category.MenuTitle,"Browse",new { category = category.MenuTitle })</li>
+    }
+</ul>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MenuTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MenuDescription)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MenuTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MenuDescription)
-        </td>
-        <td>           
-            @Html.ActionLink("View Menu", "ViewMenu", new { id = item.MenuID })
-        </td>
-    </tr>
-}
-
-</table>

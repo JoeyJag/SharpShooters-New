@@ -22,7 +22,16 @@ namespace Sharpshooter.Controllers
 
         public ActionResult ViewMenuAll()
         {
-            return View(db.Menus.ToList());
+            var categories = db.Menus.ToList();
+            return View(categories);
+        }
+
+
+        public ActionResult Browse(string category)
+        {
+            var categoryModel = db.Menus.Include("MenuItems").Single(c => c.MenuTitle == category);
+            return View(categoryModel);
+            
         }
         // GET: Menus/Details/5
         public ActionResult Details(int? id)
@@ -39,18 +48,16 @@ namespace Sharpshooter.Controllers
             return View(menu);
         }
 
-        public ActionResult ViewMenu(int? id)
+        public ActionResult ViewItems(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Menu menu = db.Menus.Find(id);
-            if (menu == null)
-            {
-                return HttpNotFound();
-            }
-            return View(menu);
+            var Item = db.MenuItems.Find(id);
+            return View(Item);
+        }
+
+        public ActionResult ViewMenu(int id)
+        {
+            var Item = db.MenuItems.Find(id);
+            return View(Item);
         }
 
         // GET: Menus/Create
