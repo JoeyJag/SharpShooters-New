@@ -195,9 +195,9 @@
     <Compile Include="Migrations\202005061454489_InitialCreate.Designer.cs">
       <DependentUpon>202005061454489_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202005121523021_InitialModel.cs" />
-    <Compile Include="Migrations\202005121523021_InitialModel.Designer.cs">
-      <DependentUpon>202005121523021_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202005201110598_InitialModel.cs" />
+    <Compile Include="Migrations\202005201110598_InitialModel.Designer.cs">
+      <DependentUpon>202005201110598_InitialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -303,6 +303,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\" />
+    <Folder Include="Content\ItemImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -321,8 +322,8 @@
     <EmbeddedResource Include="Migrations\202005061454489_InitialCreate.resx">
       <DependentUpon>202005061454489_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005121523021_InitialModel.resx">
-      <DependentUpon>202005121523021_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005201110598_InitialModel.resx">
+      <DependentUpon>202005201110598_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

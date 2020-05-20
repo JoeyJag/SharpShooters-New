@@ -38,6 +38,9 @@ namespace Sharpshooter.Models
         [Display(Name ="How many in serving")]
         public int MenuItemQuantity { get; set; }
 
+        [Display(Name ="Food Image")]
+        public string MenuItemImg { get; set; }
+
         [Display(Name ="Cost Of Menu Item")]
         public decimal MenuItemCost { get; set; }
     }

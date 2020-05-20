@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Sharpshooter.Models;
+using System.IO;
 
 namespace Sharpshooter.Controllers
 {
@@ -55,10 +56,17 @@ namespace Sharpshooter.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MenuItemID,MenuID,MenuGroupID,MenuItemTitle,MenuItemDescription,MenuItemNutrition,MenuItemIngredients,MenuItemQuantity,MenuItemCost")] MenuItem menuItem)
+        public ActionResult Create([Bind(Include = "MenuItemID,MenuID,MenuGroupID,MenuItemTitle,MenuItemDescription,MenuItemNutrition,MenuItemIngredients,MenuItemImg,MenuItemQuantity,MenuItemCost")] MenuItem menuItem, HttpPostedFileBase MenuItemImg)
         {
             if (ModelState.IsValid)
             {
+                MenuItem m = new MenuItem();
+                m.MenuItemTitle = menuItem.MenuItemTitle;
+                m.MenuItemImg = MenuItemImg.FileName.ToString();
+
+                var path = Server.MapPath("~/Content/ItemImages/");
+                MenuItemImg.SaveAs(Path.Combine(path, MenuItemImg.FileName.ToString()));
+
                 db.MenuItems.Add(menuItem);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -91,7 +99,7 @@ namespace Sharpshooter.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MenuItemID,MenuID,MenuGroupID,MenuItemTitle,MenuItemDescription,MenuItemNutrition,MenuItemIngredients,MenuItemQuantity,MenuItemCost")] MenuItem menuItem)
+        public ActionResult Edit([Bind(Include = "MenuItemID,MenuID,MenuGroupID,MenuItemTitle,MenuItemDescription,MenuItemNutrition,MenuItemIngredients,MenuItemImg,MenuItemQuantity,MenuItemCost")] MenuItem menuItem)
         {
             if (ModelState.IsValid)
             {
