@@ -56,16 +56,25 @@ namespace Sharpshooter.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MenuItemID,MenuID,MenuGroupID,MenuItemTitle,MenuItemDescription,MenuItemNutrition,MenuItemIngredients,MenuItemImg,MenuItemQuantity,MenuItemCost")] MenuItem menuItem, HttpPostedFileBase MenuItemImg)
+        public ActionResult Create([Bind(Include = "MenuItemID,MenuID,MenuGroupID,MenuItemTitle,MenuItemDescription,MenuItemNutrition,MenuItemIngredients,MenuItemQuantity,MenuItemImg,ImageFile,MenuItemCost")] MenuItem menuItem/*, HttpPostedFileBase MenuItemImg*/)
         {
             if (ModelState.IsValid)
             {
-                MenuItem m = new MenuItem();
-                m.MenuItemTitle = menuItem.MenuItemTitle;
-                m.MenuItemImg = MenuItemImg.FileName.ToString();
+                string fileName = Path.GetFileNameWithoutExtension(menuItem.ImageFile.FileName);
+                string extension = Path.GetExtension(menuItem.ImageFile.FileName);
+                fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                menuItem.MenuItemImg = "~/Content/ItemImages/" + fileName;
+                fileName = Path.Combine(Server.MapPath("~/Content/ItemImages/"), fileName);
+                menuItem.ImageFile.SaveAs(fileName);
 
-                var path = Server.MapPath("~/Content/ItemImages/");
-                MenuItemImg.SaveAs(Path.Combine(path, MenuItemImg.FileName.ToString()));
+
+
+                //MenuItem m = new MenuItem();
+                //m.MenuItemTitle = menuItem.MenuItemTitle;
+                //m.MenuItemImg = MenuItemImg.FileName.ToString();
+
+                //var path = Server.MapPath("~/Content/ItemImages/");
+                //MenuItemImg.SaveAs(Path.Combine(path, MenuItemImg.FileName.ToString()));
 
                 db.MenuItems.Add(menuItem);
                 db.SaveChanges();
@@ -99,10 +108,18 @@ namespace Sharpshooter.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MenuItemID,MenuID,MenuGroupID,MenuItemTitle,MenuItemDescription,MenuItemNutrition,MenuItemIngredients,MenuItemImg,MenuItemQuantity,MenuItemCost")] MenuItem menuItem)
+        public ActionResult Edit([Bind(Include = "MenuItemID,MenuID,MenuGroupID,MenuItemTitle,MenuItemDescription,MenuItemNutrition,MenuItemIngredients,MenuItemQuantity,MenuItemImg,ImageFile,MenuItemCost")] MenuItem menuItem)
         {
             if (ModelState.IsValid)
             {
+                string fileName = Path.GetFileNameWithoutExtension(menuItem.ImageFile.FileName);
+                string extension = Path.GetExtension(menuItem.ImageFile.FileName);
+                fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                menuItem.MenuItemImg = "~/Content/ItemImages/" + fileName;
+                fileName = Path.Combine(Server.MapPath("~/Content/ItemImages/"), fileName);
+                menuItem.ImageFile.SaveAs(fileName);
+
+
                 db.Entry(menuItem).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

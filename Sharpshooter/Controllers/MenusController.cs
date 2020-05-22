@@ -50,8 +50,10 @@ namespace Sharpshooter.Controllers
 
         public ActionResult ViewItems(int id)
         {
-            var Item = db.MenuItems.Find(id);
-            return View(Item);
+            MenuItem menuItem = new MenuItem();
+            menuItem = db.MenuItems.Where(x => x.MenuItemID == id).FirstOrDefault();
+            
+            return View(menuItem);
         }
 
         public ActionResult ViewMenu(int id)
