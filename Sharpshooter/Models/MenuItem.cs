@@ -41,6 +41,10 @@ namespace Sharpshooter.Models
         [Display(Name ="Food Image")]
         public string MenuItemImg { get; set; }
 
+        [NotMapped]
+        public HttpPostedFileBase ImageFile { get; set; }
+
+
         [Display(Name ="Cost Of Menu Item")]
         public decimal MenuItemCost { get; set; }
     }
