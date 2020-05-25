@@ -3,6 +3,20 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Sharpshooter.Models
 {
+
+    public class SendEmailViewModel
+    {
+        [Required]
+        [Display(Name ="First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name ="Email")]
+        public string Email { get; set; }
+    }
+
+
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
