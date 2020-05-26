@@ -196,9 +196,9 @@
     <Compile Include="Migrations\202005061454489_InitialCreate.Designer.cs">
       <DependentUpon>202005061454489_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202005221150472_InitialModel.cs" />
-    <Compile Include="Migrations\202005221150472_InitialModel.Designer.cs">
-      <DependentUpon>202005221150472_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202005260954036_InitialModel.cs" />
+    <Compile Include="Migrations\202005260954036_InitialModel.Designer.cs">
+      <DependentUpon>202005260954036_InitialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -302,6 +302,8 @@
     <Content Include="Views\Menus\ViewMenuAll.cshtml" />
     <Content Include="Views\Menus\ViewItems.cshtml" />
     <Content Include="Views\Account\SendEmail.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\RegisterConfirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\" />
@@ -324,8 +326,8 @@
     <EmbeddedResource Include="Migrations\202005061454489_InitialCreate.resx">
       <DependentUpon>202005061454489_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005221150472_InitialModel.resx">
-      <DependentUpon>202005221150472_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005260954036_InitialModel.resx">
+      <DependentUpon>202005260954036_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
